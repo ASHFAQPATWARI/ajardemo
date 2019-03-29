@@ -1,0 +1,15 @@
+.signup {
+    background-color: #f2f4f8;
+    min-height: 100vh;
+    .signupContent {
+        height: calc(100vh - 53px);
+        .signupform {
+            @media screen and (min-width: 769px) {
+                .field-body {
+                    flex-grow: 3;
+                }
+            }
+        }
+    }
+
+}

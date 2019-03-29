@@ -1,0 +1,45 @@
+.main-container {
+    .main-sidebar {
+        width: 80px;
+        height: 100vh;
+        position: fixed;
+        background-color: var(--grey-bg);
+        border-right: 1px solid #C4D6DF;
+        .sidelink {
+            padding: 10px 0;
+            a {
+                margin: 0 auto;
+                text-align: center;
+                height: 42px;
+                width: 56px;
+                border-radius: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg {
+                    margin-top: -3px;
+                }
+                &.active {
+                    background-color: rgba(29, 53, 73, 0.03);
+                    #Symbols {
+                        opacity: 0.8;
+                        stroke-width: 0.4;
+                    }
+                    * {
+                        fill: var(--secondary-color);
+                        stroke: var(--secondary-color);
+                    }
+                }
+            }
+        }
+    }
+    .main-content {
+        width: calc(100% - 65px);
+        margin-left: 80px;
+    }
+}
+
+.sidelink-icon {
+    width: 24px;
+    height: 24px;
+}
