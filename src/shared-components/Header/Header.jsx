@@ -17,9 +17,9 @@ class Header extends React.Component {
         return (
             <nav className="navbar main-header" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href="https://bulma.io">
+                    {/* <a className="navbar-item" href="https://bulma.io">
                         <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="ajar logo" />
-                    </a>
+                    </a> */}
                 </div>
 
                 <div className="navbar-menu">

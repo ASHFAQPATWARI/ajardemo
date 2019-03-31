@@ -15,6 +15,24 @@ import { ReactComponent as Back } from 'assets/icons/arrow-right.svg';
 
 import './Signup.scss';
 
+const countries = [
+    { 
+        slug: 'kuwait',
+        name: 'Kuwait',
+        code: '965'
+    },
+    {
+        slug: 'uae',
+        name: 'UAE',
+        code: '971'
+    },
+    {
+        slug: 'qatar',
+        name: 'Qatar',
+        code: '966'
+    }
+];
+
 class Signup extends React.Component {
 
 
@@ -38,10 +56,12 @@ class Signup extends React.Component {
         this.storeFormDataInStorage = this.storeFormDataInStorage.bind(this);
     }
 
+    // Listen for unload event to store form data in storage
     componentDidMount() {
         window.addEventListener("unload", this.storeFormDataInStorage);
     }
 
+    // remove the listener when component is destroyed 
     componentWillUnmount() {
         window.removeEventListener("unload", this.storeFormDataInStorage);
     }
@@ -100,6 +120,7 @@ class Signup extends React.Component {
         }
     }
 
+    // Change country code based on selected country
     handleCountryChange = (event) => {
         const selectedCountry = event.target.value;
         let countryCode;
@@ -207,10 +228,11 @@ class Signup extends React.Component {
                                                                 <div className="control">
                                                                     <div className="select">
                                                                         <select required value={state.selectedCountry} name='country' onChange={this.handleCountryChange}>
-                                                                            <option value='kuwait'>Kuwait</option>
-                                                                            <option value='ksa'>Saudi Arabia</option>
-                                                                            <option value='uae'>UAE</option>
-                                                                            <option value='qatar'>Qatar</option>
+                                                                            {
+                                                                                countries.map((country) => {
+                                                                                    return <option key={country.slug} value={country.slug}>{country.name}</option>
+                                                                                })
+                                                                            }
                                                                         </select>
                                                                     </div>
                                                                 </div>
