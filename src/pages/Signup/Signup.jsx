@@ -106,7 +106,8 @@ class Signup extends React.Component {
         if (this.form.current.reportValidity()) {
             const user = {
                 name: this.state.name,
-                role: this.state.usertype
+                role: this.state.usertype,
+                email: this.state.email
             }
             storageService.setUser(user);
             storageService.removeFormData();
