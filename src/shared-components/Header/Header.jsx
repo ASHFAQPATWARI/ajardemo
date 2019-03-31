@@ -1,11 +1,18 @@
 import * as React from 'react';
-
+import { withRouter } from 'react-router-dom';
+import storageHelper from 'services/storage.js';
 import { ReactComponent as MoreIcon } from 'assets/icons/more.svg';
 import { ReactComponent as LogoutIcon } from 'assets/icons/logout.svg';
 
 import './Header.scss';
 
 class Header extends React.Component {
+
+    logout = () => {
+        storageHelper.removeUser();
+        this.props.history.push('/signup');
+    }
+
     render() {
         return (
             <nav className="navbar main-header" role="navigation" aria-label="main navigation">
@@ -49,13 +56,13 @@ class Header extends React.Component {
                     </div> */}
 
                     <div className="navbar-end">
-                    <div className="navbar-item has-dropdown is-hoverable">
+                        <div className="navbar-item has-dropdown is-hoverable">
                             <div className="navbar-link is-arrowless">
                                 <MoreIcon className="sidelink-icon"></MoreIcon>
                             </div>
 
                             <div className="navbar-dropdown is-right">
-                                <div className="navbar-item cursor">
+                                <div className="navbar-item cursor" onClick={this.logout}>
                                     <LogoutIcon className='logout'></LogoutIcon>
                                     Logout
                                 </div>
@@ -68,4 +75,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default withRouter(Header);

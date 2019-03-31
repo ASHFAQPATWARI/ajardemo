@@ -2,14 +2,19 @@
     background-color: #f2f4f8;
     min-height: 100vh;
     .signupContent {
-        height: calc(100vh - 53px);
+        min-height: calc(100vh - 53px);
         .signupform {
             @media screen and (min-width: 769px) {
                 .field-body {
-                    flex-grow: 3;
+                    flex-grow: 2;
                 }
             }
         }
     }
-
+    .back svg {
+        height: 22px;
+        width: 22px;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
 }

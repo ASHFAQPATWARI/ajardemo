@@ -1,5 +1,6 @@
+import storageHelper from 'services/storage.js';
 const Auth = {
-    isAuthenticated: true,
+    isAuthenticated: storageHelper.getUser() ? true : false,
     authenticate(cb) {
         this.isAuthenticated = true;
     },
