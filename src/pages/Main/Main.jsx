@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { ReactComponent as Logosm } from 'assets/imgs/logosm.svg';
 import { ReactComponent as TenantIcon } from 'assets/icons/tenant.svg';
 import { ReactComponent as PropertyIcon } from 'assets/icons/property.svg';
-import { ReactComponent as GearIcon } from 'assets/icons/gear.svg';
 import { ReactComponent as BellIcon } from 'assets/icons/bell.svg';
 import { ReactComponent as DashboardIcon } from 'assets/icons/dashboard.svg';
 
@@ -26,6 +25,16 @@ const componentMapping = {
     property: Property
 }
 
+const returnMenuIcon = function(slug) {
+    switch(slug) {
+        case 'dashboard': return <DashboardIcon className="sidelink-icon" />
+        case 'tenants': return <TenantIcon className="sidelink-icon" />
+        case 'property': return <PropertyIcon className="sidelink-icon" />
+        case 'notifications': return <BellIcon className="sidelink-icon" />
+        default: return false;
+    }
+}
+
 class MainContainer extends React.Component {
     render() {
         const { user } = this.props;
@@ -38,36 +47,15 @@ class MainContainer extends React.Component {
                                 <Logosm className="sidelink-icon" />
                             </NavLink>
                         </li>
-                        <li className='sidelink'>
-                            <NavLink to="/dashboard" activeClassName="active">
-                                <DashboardIcon className="sidelink-icon" />
-                            </NavLink>
-                        </li>
                         {
-                            this.props.user.role === 'landlord' ?
-                                <>
-                                    <li className='sidelink' data-tip="Tenants">
-                                        <NavLink to="/tenants" activeClassName="active">
-                                            <TenantIcon className="sidelink-icon" />
-                                        </NavLink>
-                                    </li>
-                                    <li className='sidelink' data-tip="Properties">
-                                        <NavLink to="/property" activeClassName="active">
-                                            <PropertyIcon className="sidelink-icon" />
-                                        </NavLink>
-                                    </li>
-                                    <li className='sidelink' data-tip="Settings">
-                                        <NavLink to="/settings" activeClassName="active">
-                                            <GearIcon className="sidelink-icon" />
-                                        </NavLink>
-                                    </li>
-                                </> : ''
+                            user.permissions.map((route) => {
+                                return <li className='sidelink' key={route.slug} data-tip={route.title}>
+                                    <NavLink to={`/${route.slug}`} activeClassName="active">
+                                        {returnMenuIcon(route.slug)}
+                                    </NavLink>
+                                </li>
+                            })
                         }
-                        <li className='sidelink' data-tip="Notifications">
-                            <NavLink to="/notifications" activeClassName="active">
-                                <BellIcon className="sidelink-icon" />
-                            </NavLink>
-                        </li>
                     </ul>
                 </div>
                 <div className='main-content'>
@@ -79,13 +67,8 @@ class MainContainer extends React.Component {
                                     return <Route key={route.slug} path={`/${route.slug}`} component={componentMapping[route.slug]} />
                                 })
                             }
-                            {/* <Route path="/dashboard" component={Dashboard} />
-                            <Route path="/tenants" component={Tenants} />
-                            <Route path="/property" component={Property} />
-                            <Route path="/notifications" component={Notifications} /> */}
                             <Redirect exact='true' from="/" to="/dashboard" />
                             <Route component={NoMatch} />
-
                         </Switch>
                     </section>
                 </div>
@@ -96,7 +79,6 @@ class MainContainer extends React.Component {
 
 const mapStateToProps = state => {
     const user = state.user;
-    console.log('user in main', user);
     return { user };
 };
 

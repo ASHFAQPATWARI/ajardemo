@@ -58,12 +58,12 @@ class Signup extends React.Component {
 
     // Listen for unload event to store form data in storage
     componentDidMount() {
-        window.addEventListener("unload", this.storeFormDataInStorage);
+        window.addEventListener("beforeunload", this.storeFormDataInStorage);
     }
 
     // remove the listener when component is destroyed 
     componentWillUnmount() {
-        window.removeEventListener("unload", this.storeFormDataInStorage);
+        window.removeEventListener("beforeunload", this.storeFormDataInStorage);
     }
 
     handleTypeChange = (event) => {
