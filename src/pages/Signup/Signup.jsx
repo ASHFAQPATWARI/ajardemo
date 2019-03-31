@@ -234,12 +234,6 @@ class Signup extends React.Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {/* <Input label='Mobile No.' type='number' value={state.mob}
-                                                        handleChange={this.handleTypeChange} name='mob'
-                                                        placeholder="Enter Mobile No "
-                                                        required={true}>
-                                                    </Input> */}
-
                                                 </>
                                                 :
                                                 <>
