@@ -1,6 +1,6 @@
 # AJAR ONLINE TEST EXERCISE
 
-The exercise demonstrates REACT, REACT ROUTER and REDUX integration. There is a 2-step signup form which saves the incomplete form data on refresh or browser/window close. Based on the usertype selected, user needs to enter different data in step 2. On successfull signup, user is redirected to dashboard based on his role(TENANT or LANDLORD). There are different permissions for both user types and both will see different sidemenu links. USER is persisted in localstorage for demo purpose, thus, after successful signup, accessing dashboard will show the user dashboard based on role.
+The exercise demonstrates REACT, REACT ROUTER and REDUX integration. There is a 2-step signup form which saves the incomplete form data on refresh or browser/window close. Based on the usertype selected, user needs to enter different data in step 2. On successfull signup, user is redirected to dashboard based on his role(TENANT or LANDLORD). There are different permissions for both user types and both will see different sidemenu links. USER is persisted in localstorage for demo purpose, thus, after successful signup, accessing dashboard will show the user dashboard based on role. Use logout button in Header to remove user.
 
 #### Run the application in development mode (assuming node.js is installed)
 ```
