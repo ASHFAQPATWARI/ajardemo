@@ -84,6 +84,7 @@ class Signup extends React.Component {
 
     }
 
+    // method to store signup form data in localstorage 
     storeFormDataInStorage() {
         storageService.storeFormData(this.state);
     }

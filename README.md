@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AJAR ONLINE TEST EXERCISE
 
-## Available Scripts
+#### How to Run The bundled Application
+- Unzip the ajaronline.zip, you should have folder name `ajaronline` now.
+- Install the prerequisites, assuming `node.js` is installed
+```sh
+$ npm install -g serve
+$ cd ajaronline
+$ serve -s build
+```
 
-In the project directory, you can run:
+#### Run the application in development mode
+```
+$ cd ajaronline
+$ npm install
+$ npm start
+```
+### React concepts used are:
+- Stateful class components
+- Stateless functional components
+- Component Lfecycle hooks for adding and removing listeners (`beforeunload` event for storing signup form data)
+- React `state` and `props`
+- DOM Events handling
+- DOM Nodes `reference` (for validating signup form)
+- JSX Patterns like `conditionals` & `lists`
+- Returning multiple elements using `Fragments`
+- Property validation using `PropTypes` (in Input component)
 
-### `npm start`
+### React Router v4:
+- Routes 
+- Redirects (AUTHENTICATION)
+- Handling No MATCH (404)
+- Use of `SWITCH` for rendering only first matched route
+- Using `withRouter` for components not rendered via React Router
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Redux Concepts displayed:
+- `Reducers` for user handling
+- Usage of `MapStateToProps` for getting user object from store
+- Using `mapDispatchToProps` for setting user object in store on signup
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#### The application is hosted using gitlab at: [AJAR ONLINE DEMO](https://ashfaqpatwari.gitlab.io/ajardemo/)
 
-### `npm test`
+###### Note: Since gitlab does not support html5 routing, in order to refresh you will have to use the above url again else 404 page will be shown. Best way is to serve it from build folder as shown above.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

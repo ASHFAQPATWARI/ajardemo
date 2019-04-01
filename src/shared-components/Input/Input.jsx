@@ -1,6 +1,7 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
-/* Stateless component to render input fields */
+/* Stateless functional component to render input fields */
 const Input = (props) => {
     const { label, name, value, placeholder, handleChange, type, required } = props;
     return (
@@ -25,6 +26,19 @@ const Input = (props) => {
             </div>
         </div>
     )
+}
+
+Input.propTypes = {
+    name: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'number', 'email']),
+    value: PropTypes.string,
+    handleChange: PropTypes.func.isRequired,
+    required: PropTypes.bool
+}
+
+Input.defaultProps = {
+    type: 'text',
+    required: false
 }
 
 export default Input;

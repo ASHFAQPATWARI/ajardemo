@@ -12,22 +12,19 @@ const LandlordDashboard = (props) => {
                     </div>
                 </div>
                 <div className="card-content">
-                    <div class="columns">
-                        <div class="column">
+                    <div className="columns">
+                        <div className="column">
                             <p className='has-text-danger is-size-4'>Total Rent Collection</p>
                             <p className='has-text-grey is-size-2'><strong>11300 K.D</strong></p>
                         </div>
-                        <div class="column">
+                        <div className="column">
                             <p className='has-text-danger is-size-4'>Total Units</p>
                             <p className='has-text-grey is-size-2'><strong>67</strong></p>
                         </div>
-                        <div class="column">
+                        <div className="column">
                             <p className='has-text-danger is-size-4'>Expiring Contracts</p>
                             <p className='has-text-grey is-size-2'><strong>9</strong></p>
                         </div>
-                        {/* <div class="column">
-                            Fourth column
-                        </div> */}
                     </div>
                 </div>
             </section>
