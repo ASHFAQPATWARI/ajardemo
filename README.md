@@ -1,20 +1,21 @@
 # AJAR ONLINE TEST EXERCISE
 
-#### How to Run The bundled Application
-- Unzip the ajaronline.zip, you should have folder name `ajaronline` now.
-- Install the prerequisites, assuming `node.js` is installed
-```sh
-$ npm install -g serve
-$ cd ajaronline
-$ serve -s build
+#### Run the application in development mode (assuming node.js is installed)
 ```
-
-#### Run the application in development mode
-```
-$ cd ajaronline
+$ git clone https://github.com/ASHFAQPATWARI/ajardemo.git
+$ cd ajardemo
 $ npm install
 $ npm start
 ```
+
+#### How to Build and serve the bundled Application
+
+```sh
+$ npm run build
+$ npm install -g serve
+$ serve -s build
+```
+
 ### React concepts used are:
 - Stateful class components
 - Stateless functional components
@@ -37,6 +38,8 @@ $ npm start
 - `Reducers` for user handling
 - Usage of `MapStateToProps` for getting user object from store
 - Using `mapDispatchToProps` for setting user object in store on signup
+
+#### The code is hosted on github: https://github.com/ASHFAQPATWARI/ajardemo
 
 #### The application is hosted using gitlab at: [AJAR ONLINE DEMO](https://ashfaqpatwari.gitlab.io/ajardemo/)
 
